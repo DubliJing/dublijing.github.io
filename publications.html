@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications – Jing Wu</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 15.5px;
+      line-height: 1.72;
+      color: #222;
+      background: #fff;
+    }
+
+    a { color: #2471a3; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .site-wrap {
+      display: grid;
+      grid-template-columns: 195px 1fr;
+      max-width: 1060px;
+      margin: 2rem auto 0;
+      padding: 0 2rem;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    /* ── Left column ── */
+    .col-left {
+      position: sticky;
+      top: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .site-name {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #111;
+      margin-bottom: 1.4rem;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .social-list { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; }
+    .social-list li a {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.85rem;
+      color: #2471a3;
+    }
+    .social-list li a:hover { text-decoration: underline; }
+    .social-list svg { opacity: 0.75; flex-shrink: 0; }
+
+    /* ── Right column ── */
+    .col-right nav {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .col-right nav a { color: #333; padding-bottom: 3px; }
+    .col-right nav a:hover { text-decoration: none; color: #000; }
+    .col-right nav a.active {
+      border-bottom: 2px solid #333;
+      text-decoration: none;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 0.3rem;
+      line-height: 1.2;
+    }
+
+    .update-date {
+      font-size: 0.88rem;
+      color: #888;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 1rem;
+    }
+
+    /* ── Paper card ── */
+    .pub-list { display: flex; flex-direction: column; gap: 2rem; }
+
+    .pub-card {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .pub-thumb {
+      width: 200px;
+      height: 130px;
+      flex-shrink: 0;
+      border-radius: 4px;
+      object-fit: cover;
+      object-position: center;
+      border: 1px solid #e0e0e0;
+    }
+
+    .pub-info { flex: 1; }
+
+    .pub-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #111;
+      line-height: 1.45;
+      margin-bottom: 0.2rem;
+    }
+
+    .pub-venue {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #c0392b;
+      margin-bottom: 0.3rem;
+    }
+
+    .pub-venue.neutral { color: #555; font-weight: 400; font-style: italic; }
+
+    .pub-links {
+      display: flex;
+      gap: 0.8rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .pub-authors {
+      font-size: 0.88rem;
+      color: #444;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      background: #eef4fb;
+      color: #2471a3;
+      border: 1px solid #b8d0ea;
+      border-radius: 3px;
+      padding: 1px 5px;
+      margin-left: 5px;
+      vertical-align: middle;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #1a1a1a;
+      color: #aaa;
+      font-size: 0.8rem;
+      text-align: center;
+      padding: 1.3rem 1rem;
+      margin-top: 3.5rem;
+    }
+    footer a { color: #ccc; }
+
+    @media (max-width: 640px) {
+      .site-wrap { grid-template-columns: 1fr; gap: 1.5rem; }
+      .col-left { position: static; }
+      h1 { font-size: 1.9rem; }
+      .pub-card { flex-direction: column; }
+      .pub-thumb { width: 100%; aspect-ratio: 16/9; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="site-wrap">
+
+  <!-- ── LEFT COLUMN ── -->
+  <div class="col-left">
+    <div class="site-name">Jing Wu</div>
+    <img class="avatar" src="images/avatar.jpg" alt="Jing Wu">
+    <ul class="social-list">
+      <li>
+        <a href="mailto:jing.wu@rwth-aachen.de">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+          Email
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/DubliJing" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://linkedin.com/in/jing-wu-854a49296" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          Google Scholar
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ── RIGHT COLUMN ── -->
+  <div class="col-right">
+    <nav>
+      <a href="index.html">About Me</a>
+      <a href="publications.html" class="active">Publications</a>
+    </nav>
+
+    <h1>Publications</h1>
+    <p class="update-date">Latest Update: 2026.06</p>
+
+    <div class="pub-list">
+
+      <!-- <div class="pub-card">
+        <div class="pub-thumb">paper thumbnail</div>
+        <div class="pub-info">
+          <div class="pub-title">
+            Hybrid Zero-Shot Interactive Navigation with LLMs: Path Planning under Dual Constraints of Speech and Environment
+            <span class="badge">Under Review</span>
+          </div>
+          <div class="pub-venue neutral">2026</div>
+          <div class="pub-authors"><strong>Jing Wu</strong> et al.</div>
+        </div>
+      </div> -->
+
+      <div class="pub-card">
+        <img class="pub-thumb" src="images/paper_masa.png" alt="MASA-SegNet">
+        <div class="pub-info">
+          <div class="pub-title">MASA-SegNet: A Semantic Segmentation Network for PolSAR Images</div>
+          <div class="pub-venue">Remote Sensing, 2023</div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.3390/rs15143662" target="_blank" rel="noopener">Paper</a>
+          </div>
+          <div class="pub-authors">Sun, J., Yang, S., Gao, X., Ou, D., Tian, Z., <strong>Wu, J.</strong>, Wang, M.</div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <img class="pub-thumb" src="images/paper_mouse.png" alt="Mouse Pose">
+        <div class="pub-info">
+          <div class="pub-title">A Large-Scale Mouse Pose Dataset for Mouse Pose Estimation</div>
+          <div class="pub-venue">Symmetry, 2022</div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.3390/sym14050875" target="_blank" rel="noopener">Paper</a>
+          </div>
+          <div class="pub-authors">Sun, J., <strong>Wu, J.</strong>, Liao, X., Wang, S., Wang, M.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2026 Jing Wu &nbsp;·&nbsp; RWTH Aachen University &nbsp;·&nbsp;
+  Hosted on <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
+</footer>
+
+</body>
+</html>
